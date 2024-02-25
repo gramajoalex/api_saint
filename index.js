@@ -3,7 +3,7 @@ import express from "express";
 import helmet from "helmet";
 import morgan from "morgan";
 import cors from "cors";
-import routes from "./routes/index.js";
+import routes from "./api/routes/index.js";
 
 const port = process.env.PORT || 3001;
 const app = express();

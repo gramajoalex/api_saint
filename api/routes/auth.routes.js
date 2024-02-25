@@ -4,10 +4,7 @@ import { Router } from "express";
 const router = Router();
 
 export default (passport) => {
-//   router.get(
-//     "/",
-//     AuthController.getAll
-//   );
+  // router.get("/", AuthController.getAll);
 
   return router;
 };

@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { AuthController } from "../controllers/Auth.controller.js";
+import { SATARJController } from "controllers/SATARJ.controller";
 
 const router = Router();
 
 export default (passport) => {
-  router.post(
-    "/login",
+  router.get(
+    "",
     // passport.authenticate("jwt", { session: false }),
-    AuthController.login
+    SATARJController.getAll
   );
 
   return router;

@@ -1,27 +1,41 @@
 {
   "name": "api-saint",
   "version": "1.0.0",
-  "type": "module",
-  "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon ./index.js"
+    "clean": "rm -rf build && mkdir build",
+    "build-babel": "./node_modules/.bin/babel -d ./build ./api -s -D",
+    "build": "npm run clean && npm run build-babel",
+    "dev": "nodemon --exec babel-node ./api/index.js",
+    "start": "npm run build && node ./build/index.js",
+    "env:dev": "node envs/set-environment.js dev",
+    "env:test": "node envs/set-environment.js test",
+    "env:prod": "node envs/set-environment.js prod"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
     "axios": "^1.6.5",
+    "babel-plugin-module-resolver": "^5.0.0",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.20.2",
     "cors": "^2.8.5",
     "dotenv": "^16.3.2",
     "express": "^4.18.2",
     "helmet": "^7.1.0",
-    "morgan": "^1.10.0",
+    "jsonwebtoken": "^9.0.2",
     "multer": "^1.4.5-lts.1",
-    "sequelize": "^6.35.2"
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "passport-local": "^1.0.0",
+    "passport-oauth2": "^1.8.0",
+    "sequelize": "^6.35.2",
+    "tedious": "^17.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.23.9",
+    "@babel/node": "^7.23.9",
+    "@babel/preset-env": "^7.23.9",
     "nodemon": "^3.0.3"
   }
 }

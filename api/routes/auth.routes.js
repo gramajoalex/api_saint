@@ -6,7 +6,6 @@ const router = Router();
 export default (passport) => {
   router.post(
     "/login",
-    // passport.authenticate("jwt", { session: false }),
     AuthController.login
   );
 

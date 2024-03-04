@@ -43,7 +43,7 @@ const getUserKeyByUsername = async (username) => {
  */
 export const Login = async (req, res) => {
   try {
-    const { username, password } = req.body; // Asume que la solicitud contiene 'username' y 'password'
+    const { username, password } = req.body;
 
     // Obtener la clave del usuario de la base de datos
     const user = await getUserKeyByUsername(username);
